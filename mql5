@@ -1,0 +1,113 @@
+
+//+------------------------------------------------------------------+
+//|                                                      Oblivion mt4 |
+//|          Copyright 2021, Forex Robot Easy Team, forexroboteasy.com |
+//|                                                                  |
+//|                                   Developed for the Oblivion MT4 |
+//|                                 Forex trading software by acting |
+//|                           as a trend advisor and providing market |
+//|                                           analysis for traders.   |
+//+------------------------------------------------------------------+
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//|                                                                  |
+//|                                                                  |
+//|                               Oblivion MT4 - Trading Robot Code   |
+//|                                                                  |
+//|                                                                  |
+//|                                                                  |
+//+------------------------------------------------------------------+
+
+// Include necessary libraries and define constants
+#include <Trade\Trade.mqh>
+#include <Expert\Expert.mqh>
+
+const int MAX_ORDERS = 10; // Maximum number of orders in a series
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//|                                                                  |
+//|                                                                  |
+//|                      Oblivion MT4 - Trading Functions             |
+//|                                                                  |
+//|                                                                  |
+//|                                                                  |
+//+------------------------------------------------------------------+
+
+// Function to start a new series of orders
+void StartSeriesOfOrders()
+{
+    for (int i = 0; i < MAX_ORDERS; i++)
+    {
+        // Place new orders based on market trends
+        if (MarketTrend() == TREND_UP)
+            BuyOrder();
+        else if (MarketTrend() == TREND_DOWN)
+            SellOrder();
+    }
+}
+
+// Function to buy based on market trend
+void BuyOrder()
+{
+    // Place buy order code here
+    // ...
+}
+
+// Function to sell based on market trend
+void SellOrder()
+{
+    // Place sell order code here
+    // ...
+}
+
+// Function to manage manual orders
+void ManageManualOrders()
+{
+    // Code to manage manual orders
+    // ...
+}
+
+// Function to implement hedge for both buy and sell directions
+void ImplementHedge()
+{
+    // Code to implement hedge
+    // ...
+}
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//|                                                                  |
+//|                                                                  |
+//|                      Oblivion MT4 - Market Analysis               |
+//|                                                                  |
+//|                                                                  |
+//|                                                                  |
+//+------------------------------------------------------------------+
+
+// Function to determine market trend
+int MarketTrend()
+{
+    // Code to analyze market and determine trend
+    // ...
+    return TREND_UP; // Return detected trend
+}
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//|                                                                  |
+//|                                                                  |
+//|                       Oblivion MT4 - Main Function                |
+//|                                                                  |
+//|                                                                  |
+//|                                                                  |
+//+------------------------------------------------------------------+
+
+// Main function of the Oblivion MT4 trading robot
+void OnTick()
+{
+    StartSeriesOfOrders(); // Start a new series of orders
+    ManageManualOrders(); // Manage manual orders
+    ImplementHedge(); // Implement hedge for buy and sell directions
+}
